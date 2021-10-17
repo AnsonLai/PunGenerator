@@ -192,7 +192,7 @@ def find_idioms(results):
       print("Idioms search: " + str(round(progress/1545*100, 2)) + "%")
     progress += 1
     for word in word_list:
-      if word in line1:
+      if word in line1.upper():
         print("Word: " + word + ", Idiom: " + line1)
         idiom_list.append((word, line1))
         break

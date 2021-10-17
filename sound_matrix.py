@@ -77,8 +77,16 @@ sound_groups = {
         "list": ["B", "CH", "D", "DH", "F", "G", "HH", "JH", "K", "L", "M", "N", "NG", "P", "R", "S", "SH", "T", "TH", "V", "W", "Y", "Z", "ZH"]
     },
     "group_f": {
-        "value": 3,
+        "value": 2,
         "list": ["CH", "G", "JH", "K", "S", "SH", "Z", "ZH"]
+    },
+    "group_f1": {
+        "value": 3,
+        "list": ["CH", "JH", "SH", "ZH"]
+    },
+    "group_f2": {
+        "value": 3,
+        "list": ["S", "SH", "Z", "ZH"]
     },
     "group_g": {
         "value": 3,
@@ -92,6 +100,26 @@ sound_groups = {
         "value": 3,
         "list": ["B", "F", "P", "V"]
     },
+    "group_j": {
+        "value": 4,
+        "list": ["D", "DH"]
+    },
+    "group_k": {
+        "value": 4,
+        "list": ["N", "NG"]
+    },
+    "group_l": {
+        "value": 4,
+        "list": ["S", "SH"]
+    },
+    "group_m": {
+        "value": 4,
+        "list": ["T", "TH"]
+    },
+    "group_n": {
+        "value": 4,
+        "list": ["Z", "ZH"]
+    },
 }
 
 for key in sound_groups:
@@ -103,4 +131,7 @@ for key in sound_groups:
 for i in range(39):
   matrix[i][i] = 5
 
-print(matrix)
+print("[")
+for i in matrix:
+    print(str(i) + ",")
+print("]")

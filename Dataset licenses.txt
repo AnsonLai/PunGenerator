@@ -58,3 +58,6 @@
 
 
 https://github.com/ShivaliGoel/Quotes-500K
+
+https://github.com/drussotto/idiom_detection/blob/master/data/idioms.txt
+

@@ -128,6 +128,20 @@ def compare_pron(pron1, pron2):
       max_score = score
   return max_score
 
+def clean_phrase(phrase):
+  phrase = phrase.replace("’", "'")
+  phrase = phrase.replace("“", '"')
+  phrase = phrase.replace("”", '"')
+  special_chars = ['"', ",", ".", "_", "?", "!", ":", ";"]
+
+  for char in special_chars:
+    phrase = phrase.replace(char, " ")
+
+  phrase = phrase.upper()
+  word_list = phrase.split()
+
+  return word_list
+
 def find_similar_words(word):
   results = []
 
@@ -171,7 +185,7 @@ def find_quotes(results):
       progress += 1
 
       for word in word_list:
-        if word in row[0].upper():
+        if word in clean_phrase(row[0]):
           print("Word: " + word + ", Quote: " + row[0])
           quote_list.append((word, row[0]))
           break
@@ -192,7 +206,7 @@ def find_idioms(results):
       print("Idioms search: " + str(round(progress/1545*100, 2)) + "%")
     progress += 1
     for word in word_list:
-      if word in line1.upper():
+      if word in clean_phrase(line1):
         print("Word: " + word + ", Idiom: " + line1)
         idiom_list.append((word, line1))
         break
@@ -206,7 +220,7 @@ def find_puns(word):
   find_quotes(results)
 
 
-word = "sushi"
+word = "awesome"
 find_puns(word)
   
 
